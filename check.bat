@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -eux
+@echo off
 
 cargo check --workspace --all-targets
 cargo check --workspace --all-features --lib --target wasm32-unknown-unknown
