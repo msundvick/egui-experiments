@@ -1,9 +1,6 @@
 const cacheName = "egui-template-pwa";
 const filesToCache = [
-  "./",
-  "./index.html",
-  "./egui_experiments.js",
-  "./egui_experiments_bg.wasm",
+  "./"
 ];
 
 /* Start the service worker and cache all of the app's content */
