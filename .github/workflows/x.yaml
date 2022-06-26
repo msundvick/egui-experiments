@@ -17,6 +17,10 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
+          
+      - run: rustup target add wasm32-unknown-unknown
+        
+      - uses: Swatinem/rust-cache@v1
 
       - name: Build
         uses: actions-rs/cargo@v1
