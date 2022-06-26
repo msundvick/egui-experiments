@@ -19,9 +19,3 @@ try {
   console.debug("app started.");
   document.getElementById("center_text").remove();
 }
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js");
-  });
-}
