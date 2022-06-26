@@ -34,6 +34,7 @@
     <script crossorigin type="module" src="./main.js"></script>
     <script>
       if ("serviceWorker" in navigator) {
+        // && !/localhost/.test(window.location)) {
         window.addEventListener("load", function () {
           navigator.serviceWorker.register("sw.js");
         });
