@@ -36,7 +36,7 @@
 		{
 			"label": "Bind Wasm",
 			"type": "shell",
-			"command": "wasm-bindgen target/wasm32-unknown-unknown/release/egui_experiments.wasm --out-dir docs --target web",
+			"command": "wasm-bindgen target/wasm32-unknown-unknown/release/egui_experiments.wasm --out-dir web --target web",
 			"problemMatcher": [],
 			"dependsOrder": "sequence",
 			"dependsOn": [
