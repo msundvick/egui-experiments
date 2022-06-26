@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>eframe template</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Disable zooming: -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#404040"
+    />
+    <link rel="apple-touch-icon" href="/icon_ios_touch_192.png" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+
+  <body>
+    <!-- The WASM code will resize the canvas dynamically -->
+    <canvas id="the_canvas_id"></canvas>
+    <div class="centered" id="center_text">
+      <p>Loading…</p>
+      <div class="lds-dual-ring"></div>
+    </div>
+    <script crossorigin type="module" src="./main.js"></script>
+  </body>
+</html>
