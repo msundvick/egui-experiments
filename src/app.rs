@@ -1,9 +1,13 @@
+use crate::widget::JibElement;
+
+
 /// We derive Deserialize/Serialize so we can persist app state on shutdown.
 #[derive(serde::Deserialize, serde::Serialize)]
 #[serde(default)] // if we add new fields, give them default values when deserializing old state
 pub struct TemplateApp {
     // Example stuff:
     label: String,
+    data: JibElement,
 
     // this how you opt-out of serialization of a member
     #[serde(skip)]
@@ -15,6 +19,7 @@ impl Default for TemplateApp {
         Self {
             // Example stuff:
             label: "Hello World!".to_owned(),
+            data: Default::default(),
             value: 2.7,
         }
     }
@@ -45,7 +50,7 @@ impl eframe::App for TemplateApp {
     /// Called each time the UI needs repainting, which may be many times per second.
     /// Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
-        let Self { label, value } = self;
+        let Self { label,data,  value } = self;
 
         // Examples of how to create different panels and windows.
         // Pick whichever suits you.
@@ -56,7 +61,7 @@ impl eframe::App for TemplateApp {
             // The top panel is often a good place for a menu bar:
             egui::menu::bar(ui, |ui| {
                 ui.menu_button("File", |ui| {
-                    if ui.button("Quit").clicked() {
+                    if !frame.is_web() && ui.button("Quit").clicked() {
                         frame.quit();
                     }
                 });
@@ -97,6 +102,7 @@ impl eframe::App for TemplateApp {
                 "Source code."
             ));
             egui::warn_if_debug_build(ui);
+            data.show(ui);
         });
 
         if false {

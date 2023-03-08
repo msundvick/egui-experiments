@@ -20,7 +20,7 @@
       media="(prefers-color-scheme: dark)"
       content="#404040"
     />
-    <link rel="apple-touch-icon" href="/icon_ios_touch_192.png" />
+    <link rel="apple-touch-icon" href="./icons/icon_ios_touch_192.png" />
     <link rel="stylesheet" href="./main.css" />
   </head>
 
@@ -36,7 +36,7 @@
       if ("serviceWorker" in navigator) {
         // && !/localhost/.test(window.location)) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("sw.js");
+          navigator.serviceWorker.register("service_worker.js");
         });
       }
     </script>
